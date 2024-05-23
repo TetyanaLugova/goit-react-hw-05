@@ -21,3 +21,14 @@ export const getTrendsMovies = async () => {
 
   return response.data;
 };
+
+export const getMovieById = async movieId => {
+  const response = await axios.get(
+    `${baseURL}movie/${movieId}?api_key=${API_KEY}`,
+    {
+      params: { language: 'en-US' },
+      ...options,
+    }
+  );
+  return response.data;
+};

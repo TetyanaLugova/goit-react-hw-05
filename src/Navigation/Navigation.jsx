@@ -11,12 +11,12 @@ export default function Navigation() {
       <ul>
         <li>
           <NavLink to="/" className={getLinkClass}>
-            HomePage
+            Home
           </NavLink>
         </li>
         <li>
           <NavLink to="/movies" className={getLinkClass}>
-            MoviesPage
+            Movies
           </NavLink>
         </li>
       </ul>
