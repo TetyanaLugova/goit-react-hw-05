@@ -1,0 +1,23 @@
+import axios from 'axios';
+
+const API_KEY = 'ad654bc604a2b45319e75bcf6764eb7b';
+const baseURL = 'https://api.themoviedb.org/3/';
+
+const options = {
+  headers: {
+    Authorization:
+      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZDY1NGJjNjA0YTJiNDUzMTllNzViY2Y2NzY0ZWI3YiIsInN1YiI6IjY2NGRkZTdiNjAxYjA2YmQ3ZWYyODBiMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eyhwssKI-OzE2A08rrcyL_D2EPYo5NkT8Xq0f8FT8Ws',
+  },
+};
+
+export const getTrendsMovies = async () => {
+  const response = await axios.get(
+    `${baseURL}trending/movie/day?api_key=${API_KEY}`,
+    {
+      params: { language: 'en-US' },
+      ...options,
+    }
+  );
+
+  return response.data;
+};
