@@ -32,3 +32,44 @@ export const getMovieById = async movieId => {
   );
   return response.data;
 };
+
+export const getCast = async movieId => {
+  const response = await axios.get(
+    `${baseURL}movie/${movieId}/credits?api_key=${API_KEY}`,
+    {
+      params: { language: 'en-US' },
+      ...options,
+    }
+  );
+  return response.data;
+};
+
+export const getReviews = async (movieId, page) => {
+  const response = await axios.get(
+    `${baseURL}movie/${movieId}/reviews?api_key=${API_KEY}`,
+    {
+      params: {
+        language: 'en-US',
+        page: page,
+      },
+      ...options,
+    }
+  );
+  return response.data;
+};
+
+export const getMovieByKeyWord = async query => {
+  const response = await axios.get(
+    `${baseURL}search/movie?api_key=${API_KEY}`,
+    {
+      params: {
+        language: 'en-US',
+        query: query,
+        page: 1,
+        include_adult: false,
+      },
+    }
+  );
+
+  return response.data;
+};

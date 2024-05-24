@@ -3,6 +3,7 @@ import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { getMovieById } from '../../API';
 import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMassage/ErrorMassage';
+import css from './MoviedetailsPage.module.css';
 
 export default function MoviePage() {
   const { movieId } = useParams();
@@ -11,6 +12,8 @@ export default function MoviePage() {
   const location = useLocation();
   const [isError, setIsError] = useState(false);
   const from = location.state?.from || '/';
+  const defaultImg =
+    '<https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg>';
 
   useEffect(() => {
     async function fetchMovieDetails(movieId) {
@@ -46,18 +49,20 @@ export default function MoviePage() {
 
   return (
     <>
-      <Link to={from}>Go back</Link>
-      <div>
+      <Link className={css.btn} to={from}>
+        Go back
+      </Link>
+      <div className={css.wrap}>
         <img
           src={
             poster_path
               ? `https://image.tmdb.org/t/p/w300${poster_path}`
-              : `http://www.suryalaya.org/images/no_image.jpg`
+              : defaultImg
           }
-          loading="lazy"
+          width={250}
           alt="Movie poster"
         />
-        <div>
+        <div className={css.content}>
           <h1>{original_title}</h1>
           <p>User score: {scoreToFixed}</p>
           <h2>Overview</h2>
@@ -71,8 +76,8 @@ export default function MoviePage() {
         </div>
       </div>
       <div>
-        <h3>Additional information</h3>
-        <ul>
+        <h3 className={css.text}>Additional information</h3>
+        <ul className={css.link}>
           <li>
             <Link to="cast" state={{ ...location.state }}>
               Cast

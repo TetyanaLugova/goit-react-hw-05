@@ -8,7 +8,7 @@ export default function Navigation() {
   };
   return (
     <nav className={css.container}>
-      <ul>
+      <ul className={css.list}>
         <li>
           <NavLink to="/" className={getLinkClass}>
             Home

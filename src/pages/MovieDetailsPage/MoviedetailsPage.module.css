@@ -1,0 +1,29 @@
+.btn {
+  border: 1px solid red;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px;
+  color: red;
+}
+.wrap {
+  display: flex;
+  margin-top: 18px;
+}
+.content {
+  text-align: left;
+  margin-left: 18px;
+  color: black;
+}
+.text {
+  color: black;
+  font-size: 24px;
+  text-align: left;
+  margin-top: 18px;
+}
+.link {
+  color: rgb(19, 18, 18);
+  font-size: 18px;
+  text-align: left;
+  text-decoration: underline;
+}

@@ -1,0 +1,8 @@
+.wrap {
+  border: 2px solid orangered;
+  border-radius: 6px;
+  padding: 6px;
+  margin-top: 8px;
+  text-align: left;
+  color: black;
+}

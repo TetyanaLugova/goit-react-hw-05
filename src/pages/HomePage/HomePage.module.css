@@ -1,0 +1,11 @@
+.title {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 24px;
+}
+.wrap {
+  border: 2px solid orangered;
+  border-radius: 6px;
+  padding: 6px;
+}

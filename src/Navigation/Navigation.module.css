@@ -1,14 +1,22 @@
-.container {
+.list {
   display: flex;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 32px;
 }
 
 .link {
   text-decoration: none;
   color: black;
   font-weight: 700;
+  border: 2px solid orangered;
+  border-radius: 6px;
+  padding: 8px;
+  width: 200px;
+  height: 68px;
+  background-color: rgb(250, 195, 112);
 }
 
 .active {
